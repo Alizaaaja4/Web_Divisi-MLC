@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/styles.css"> <!-- Panggil file CSS -->
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>MLC Center</title>
+</head>
+<body class="bg-tridary">
+   <div class="container mx-auto px-4 py-5">
+    <p class="text-lg font-bold text-white mt-4 mb-4 flex justify-center">
+        🤖 Hi, please complete the form below 
+    </p>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="border-2 border-secondary bg-white rounded-lg p-6">
+                    <h2 class="text-3xl text-secondary font-bold mb-4 text-center">Piket Besar</h2>
+                    <form action="" class="flex flex-col gap-4">
+                        <p class="font-semibold">Kode Asisten (ex: BOT)</p>
+                        <input class="rounded-xl" type="text" name="nama" placeholder="Kode Asisten">
+
+                        <p class="font-semibold">Tanggal</p>
+                        <input class="rounded-xl" type="date" name="tanggal" placeholder="Tanggal">
+
+                        <p class="font-semibold">Pilih Divisi ⬇️</p>
+                        <select class="rounded-xl" name="status" id="status">
+                            <option value="" selected disabled>Divisi Daskom</option>
+                            <option value="atc"> Divisi ATC</option>
+                            <option value="cmd">Divisi CMD</option>
+                            <option value="hrd">Divisi HRD</option>
+                            <option value="mlc">Divisi MLC</option>
+                            <option value="rdc">Divisi RDC</option>
+                        </select>
+
+                        <p class="font-semibold">Deskripsi Jobsdeks</p>
+                        <textarea class="rounded-xl" name="deskripsi" placeholder="Deskripsi Jobsdeks"></textarea>
+
+                        <p class="font-semibold">Absensi</p>
+                        <textarea class="rounded-xl" name="deskripsi" placeholder="Asisten Yang Tidak Hadir"></textarea>
+
+                        <p class="font-semibold">Upload Bukti</p>
+                        <input class="rounded-xl" type="file" name="foto" accept="image/*">
+                        <button class="bg-[#215097] rounded-xl text-white py-2 hover:scale-105 duration-300 w-24 h-10 mx-auto">Submit</button>
+                    </form>
+                    
+                </div>
+            </div>
+   </div>
+
+   <div class="pb-2">
+     <h5 class="flex justify-center text-white font-bold">MLC<span class="text-secondary">Ops</span>Center</h5>
+   </div>
+</body>
+</html>

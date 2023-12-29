@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/styles.css"> <!-- Panggil file CSS -->
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>MLC Center</title>
+</head>
+<body class="bg-tridary">
+   <div class="container mx-auto px-4 py-5">
+    <p class="text-lg font-bold text-white mt-4 mb-4 flex justify-center">
+        🤖 Hi, please complete the form below 
+    </p>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="border-2 border-fivedary bg-white rounded-lg p-6">
+                    <h2 class="text-3xl text-fivedary font-bold mb-4 text-center">Piket Laboratorium</h2>
+                    <form action="" class="flex flex-col gap-4">
+                        <p class="font-semibold">Kode Asisten (ex: BOT)</p>
+                        <input class="rounded-xl" type="text" name="nama" placeholder="Kode Asisten">
+
+                        <p class="font-semibold">Pilih Shift ⬇️</p>
+                        <select class="rounded-xl" name="status" id="status">
+                            <option value="" selected disabled>Shift Piket</option>
+                            <option value="atc"> Senin Shift 1</option>
+                            <option value="atc"> Senin Shift 2</option>
+                            <option value="atc"> Senin Shift 3</option>
+                            <option value="atc"> Selasa Shift 1</option>
+                            <option value="atc"> Rabu Shift 1</option>
+                            <option value="atc"> Rabu Shift 4</option>
+                            <option value="atc"> Kamis Shift 3</option>
+                            <option value="atc"> Jumat Shift 2</option>
+                        </select>
+
+                        <p class="font-semibold">Tanggal</p>
+                        <input class="rounded-xl" type="date" name="tanggal" placeholder="Tanggal">
+
+                        <!-- Checkbox -->
+                        <p class="font-semibold">Jobsdeks ✅</p>
+                        <div class="space-y-4">
+                            <label for="senin" class="flex items-center space-x-2">
+                                <input type="checkbox" id="nyapu" name="nyapu" class="rounded-xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                <span class="text-gray-700">Menyapu Lantai</span>
+                            </label>
+
+                            <label for="selasa" class="flex items-center space-x-2">
+                                <input type="checkbox" id="rapih kursi" name="rapih kursi" class="rounded-xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                <span class="text-gray-700">Merapihkan Kursi</span>
+                            </label>
+
+                            <label for="rabu" class="flex items-center space-x-2">
+                                <input type="checkbox" id="rapih lemari" name="rapih lemari" class="rounded-xl border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                <span class="text-gray-700">Merapihkan Lemari</span>
+                            </label>
+                        </div>
+
+                        <p class="font-semibold">Absensi</p>
+                        <textarea class="rounded-xl" name="deskripsi" placeholder="Asisten Yang Tidak Hadir"></textarea>
+
+                        <p class="font-semibold">Upload Bukti</p>
+                        <input class="rounded-xl" type="file" name="foto" accept="image/*">
+                        <button class="bg-fivedary rounded-xl text-white py-2 hover:scale-105 duration-300 w-24 h-10 mx-auto">Submit</button>
+                    </form>
+                    
+                </div>
+            </div>
+   </div>
+
+   <div class="pb-2">
+     <h5 class="flex justify-center text-white font-bold">MLC<span class="text-fivedary">Ops</span>Center</h5>
+   </div>
+</body>
+</html>

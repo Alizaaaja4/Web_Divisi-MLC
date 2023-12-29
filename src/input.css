@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+/* styles.css */
+input[type="text"],
+input[type="date"],
+textarea,
+input[type="file"] {
+    border: 1px solid #1a4b48;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: #b91c1c; /* Warna border ketika focus */
+}
