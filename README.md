@@ -1,53 +1,140 @@
-<p align="center">
-  <a href="https://tailwindcss.com" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg">
-      <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
-    </picture>
-  </a>
-</p>
+<div align="center">
+    <a href="https://php.net">
+        <img
+            alt="PHP"
+            src="https://www.php.net/images/logos/new-php-logo.svg"
+            width="150">
+    </a>
+</div>
 
-<p align="center">
-  A utility-first CSS framework for rapidly building custom user interfaces.
-</p>
+# The PHP Interpreter
 
+PHP is a popular general-purpose scripting language that is especially suited to
+web development. Fast, flexible and pragmatic, PHP powers everything from your
+blog to the most popular websites in the world. PHP is distributed under the
+[PHP License v3.01](LICENSE).
 
-<p align="center">
-    <a href="https://github.com/tailwindlabs/tailwindcss/actions"><img src="https://img.shields.io/github/actions/workflow/status/tailwindlabs/tailwindcss/ci.yml?branch=master" alt="Build Status"></a>
-    <a href="https://www.npmjs.com/package/tailwindcss"><img src="https://img.shields.io/npm/dt/tailwindcss.svg" alt="Total Downloads"></a>
-    <a href="https://github.com/tailwindcss/tailwindcss/releases"><img src="https://img.shields.io/npm/v/tailwindcss.svg" alt="Latest Release"></a>
-    <a href="https://github.com/tailwindcss/tailwindcss/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/tailwindcss.svg" alt="License"></a>
-</p>
+[![Push](https://github.com/php/php-src/actions/workflows/push.yml/badge.svg)](https://github.com/php/php-src/actions/workflows/push.yml)
+[![Build status](https://travis-ci.com/php/php-src.svg?branch=master)](https://travis-ci.com/github/php/php-src)
+[![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/php.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:php)
 
-------
-## About Tailwind CSS
+## Documentation
 
-Tailwind CSS is a utility-first CSS framework that offers a different approach to building web interfaces. It provides low-level utility classes that enable you to create custom designs without leaving your HTML. Emphasizing flexibility and speed, Tailwind simplifies the process of styling your application by breaking down components into small, reusable classes.
+The PHP manual is available at [php.net/docs](https://php.net/docs).
 
-Key features of Tailwind CSS include:
+## Installation
 
-- **Utility-First Approach:** Tailwind CSS operates on a utility-first paradigm, allowing you to compose styles directly in your markup.
-- **Highly Customizable:** It provides a comprehensive set of default styles that are fully customizable to match your project's design system.
-- **Responsive Design:** Tailwind CSS facilitates the creation of responsive layouts through breakpoint-specific utilities.
-- **Developer Experience:** The framework offers a unique developer experience by focusing on fast iteration and a minimalistic setup.
+### Prebuilt packages and binaries
 
-By leveraging Tailwind CSS, developers can expedite the styling process and maintain consistency throughout their projects. This framework's modular and versatile nature enhances productivity while offering a customizable approach to design implementation.
+Prebuilt packages and binaries can be used to get up and running fast with PHP.
 
-## Learning Tailwind CSS
+For Windows, the PHP binaries can be obtained from
+[windows.php.net](https://windows.php.net). After extracting the archive the
+`*.exe` files are ready to use.
 
-Tailwind CSS offers comprehensive resources to aid in learning and mastering the framework.
+For other systems, see the [installation chapter](https://php.net/install).
 
-- **Official Documentation:** Tailwind CSS provides extensive and detailed [documentation](https://tailwindcss.com/docs) that serves as a comprehensive guide for beginners and experienced developers alike.
-- **Video Tutorials:** For visual learners, there are numerous video tutorials available on platforms like YouTube or dedicated websites. These tutorials cover various aspects of Tailwind CSS, from basic usage to advanced techniques.
-- **Online Courses:** Platforms like [Tailwind CSS official website](https://tailwindcss.com/) might offer official courses or links to third-party resources that can be beneficial for learning Tailwind CSS in depth.
+### Building PHP source code
 
-Enhance your skills and understanding of Tailwind CSS by exploring these resources, whether you prefer textual documentation, video tutorials, or interactive courses.
+*For Windows, see [Build your own PHP on Windows](https://wiki.php.net/internals/windows/stepbystepbuild_sdk_2).*
 
-## Tailwind CSS Sponsors
+For a minimal PHP build from Git, you will need autoconf, bison, and re2c. For
+a default build, you will additionally need libxml2 and libsqlite3.
 
-We extend our gratitude to the sponsors who support the development and growth of Tailwind CSS. If you're interested in contributing or becoming a sponsor, please visit the Tailwind CSS [sponsorship page](https://github.com/sponsors/tailwindlabs).
+On Ubuntu, you can install these using:
 
-## License
+    sudo apt install -y pkg-config build-essential autoconf bison re2c \
+                        libxml2-dev libsqlite3-dev
 
-The Tailwind CSS framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+On Fedora, you can install these using:
+
+    sudo dnf install re2c bison autoconf make libtool ccache libxml2-devel sqlite-devel
+
+Generate configure:
+
+    ./buildconf
+
+Configure your build. `--enable-debug` is recommended for development, see
+`./configure --help` for a full list of options.
+
+    # For development
+    ./configure --enable-debug
+    # For production
+    ./configure
+
+Build PHP. To speed up the build, specify the maximum number of jobs using `-j`:
+
+    make -j4
+
+The number of jobs should usually match the number of available cores, which
+can be determined using `nproc`.
+
+## Testing PHP source code
+
+PHP ships with an extensive test suite, the command `make test` is used after
+successful compilation of the sources to run this test suite.
+
+It is possible to run tests using multiple cores by setting `-jN` in
+`TEST_PHP_ARGS`:
+
+    make TEST_PHP_ARGS=-j4 test
+
+Shall run `make test` with a maximum of 4 concurrent jobs: Generally the maximum
+number of jobs should not exceed the number of cores available.
+
+The [qa.php.net](https://qa.php.net) site provides more detailed info about
+testing and quality assurance.
+
+## Installing PHP built from source
+
+After a successful build (and test), PHP may be installed with:
+
+    make install
+
+Depending on your permissions and prefix, `make install` may need super user
+permissions.
+
+## PHP extensions
+
+Extensions provide additional functionality on top of PHP. PHP consists of many
+essential bundled extensions. Additional extensions can be found in the PHP
+Extension Community Library - [PECL](https://pecl.php.net).
+
+## Contributing
+
+The PHP source code is located in the Git repository at
+[github.com/php/php-src](https://github.com/php/php-src). Contributions are most
+welcome by forking the repository and sending a pull request.
+
+Discussions are done on GitHub, but depending on the topic can also be relayed
+to the official PHP developer mailing list internals@lists.php.net.
+
+New features require an RFC and must be accepted by the developers. See
+[Request for comments - RFC](https://wiki.php.net/rfc) and
+[Voting on PHP features](https://wiki.php.net/rfc/voting) for more information
+on the process.
+
+Bug fixes don't require an RFC. If the bug has a GitHub issue, reference it in
+the commit message using `GH-NNNNNN`. Use `#NNNNNN` for tickets in the old
+[bugs.php.net](https://bugs.php.net) bug tracker.
+
+    Fix GH-7815: php_uname doesn't recognise latest Windows versions
+    Fix #55371: get_magic_quotes_gpc() throws deprecation warning
+
+See [Git workflow](https://wiki.php.net/vcs/gitworkflow) for details on how pull
+requests are merged.
+
+### Guidelines for contributors
+
+See further documents in the repository for more information on how to
+contribute:
+
+- [Contributing to PHP](/CONTRIBUTING.md)
+- [PHP coding standards](/CODING_STANDARDS.md)
+- [Mailing list rules](/docs/mailinglist-rules.md)
+- [PHP release process](/docs/release-process.md)
+
+## Credits
+
+For the list of people who've put work into PHP, please see the
+[PHP credits page](https://php.net/credits.php).
