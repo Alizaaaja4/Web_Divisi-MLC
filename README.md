@@ -25,30 +25,6 @@ Welcome to the Daskom Division MLC Website repository! This website provides ess
 7. **Panggilan Darurat 🆘**
    - Emergency call facility for urgent situations.
 
-## How to Use 🚀
-
-1. **Login**:
-   - Admin: Use admin credentials for full access.
-   - User: Register or log in for specific services.
-
-2. **Absensi Piket**:
-   - Record duty attendance with a single click.
-
-3. **Perizinan Piket**:
-   - Apply for and manage duty permissions.
-
-4. **Dedna Piket**:
-   - Use the emergency call feature for critical situations.
-
-5. **FAQ Troubleshooting**:
-   - Find solutions to common issues.
-
-6. **Peminjaman Barang**:
-   - Order and borrow equipment quickly.
-
-7. **Panggilan Darurat**:
-   - Use the emergency call feature when needed.
-
 Thank you for using the Daskom Division MLC Website! Explore the features and enjoy a streamlined experience. For more details, check out the documentation. 📘
 
 Feel free to contribute and provide feedback to enhance the website's functionality. 🚀
